@@ -1,0 +1,12 @@
+matching\GiftCanceled.class
+matching\GiftCoupon.class
+matching\GiftPublished.class
+matching\AbstractEvent$1.class
+matching\AbstractEvent.class
+matching\config\kafka\KafkaProcessor.class
+matching\VisitAssigned.class
+matching\PolicyHandler.class
+matching\VisitCanceled.class
+matching\GiftCouponRepository.class
+matching\GiftCouponController.class
+matching\GiftCouponApplication.class
