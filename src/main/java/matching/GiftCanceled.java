@@ -1,4 +1,3 @@
-
 package matching;
 
 public class GiftCanceled extends AbstractEvent {

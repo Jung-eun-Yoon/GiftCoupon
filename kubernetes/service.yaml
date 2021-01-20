@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: GiftCoupon
+  name: giftcoupon
   labels:
-    app: GiftCoupon
+    app: giftcoupon
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: GiftCoupon
+    app: giftcoupon

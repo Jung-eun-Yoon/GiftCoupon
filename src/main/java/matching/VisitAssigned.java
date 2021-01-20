@@ -1,4 +1,3 @@
-
 package matching;
 
 public class VisitAssigned extends AbstractEvent {

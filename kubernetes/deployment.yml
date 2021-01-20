@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: GiftCoupon
+  name: giftcoupon
   labels:
-    app: GiftCoupon
+    app: giftcoupon
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: GiftCoupon
+      app: giftcoupon
   template:
     metadata:
       labels:
-        app: GiftCoupon
+        app: giftcoupon
     spec:
       containers:
-        - name: GiftCoupon
-          image: skcc12.azurecr.io/GiftCoupon:latest
+        - name: giftcoupon
+          image: skcc12.azurecr.io/giftcoupon:latest
           ports:
             - containerPort: 8080
           readinessProbe:

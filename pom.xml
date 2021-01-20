@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>matching</groupId>
-	<artifactId>GiftCoupon</artifactId>
+	<artifactId>giftcoupon</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>GiftCoupon</name>
+	<name>giftcoupon</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

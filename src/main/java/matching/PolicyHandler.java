@@ -17,17 +17,18 @@ public class PolicyHandler{
     }
 
     @StreamListener(KafkaProcessor.INPUT)
-    public void wheneverVisitAssigned_(@Payload VisitAssigned visitAssigned){
+    public void wheneverVisitAssigned_(@Payload VisitAssigned visitAssigned) {
 
         if(visitAssigned.isMe()){
-            System.out.println("##### listener  : " + visitAssigned.toJson());
+            System.out.println("##### listener wheneverVisitAssigned  : " + visitAssigned.toJson());
+
+            GiftCouponRepository.findById(visitAssigned.getMatchId()).ifPresent(GiftCoupon ->{
+                GiftCoupon.setMatchId(visitAssigned.getMatchId());
+                GiftCoupon.setCouponStatus("Published");
+                GiftCouponRepository.save(GiftCoupon);
+            });
+
         }
-
-        GiftCoupon giftCoupon = new GiftCoupon();
-        giftCoupon.setMatchId(visitAssigned.getMatchId());
-        giftCoupon.setCouponStatus("Published");
-        GiftCouponRepository.save(giftCoupon);
-
     }
     @StreamListener(KafkaProcessor.INPUT)
     public void wheneverVisitCanceled_(@Payload VisitCanceled visitCanceled){
@@ -35,9 +36,13 @@ public class PolicyHandler{
         if(visitCanceled.isMe()){
             System.out.println("##### listener  : " + visitCanceled.toJson());
 
-            GiftCouponRepository.findById(visitCanceled.getMatchId()).ifPresent(Visit->{
-                GiftCouponRepository.delete(Visit);
+
+            GiftCouponRepository.findById(visitCanceled.getMatchId()).ifPresent(GiftCoupon->{
+                GiftCoupon.setMatchId(visitCanceled.getMatchId());
+                GiftCouponRepository.delete(GiftCoupon);
             });
+
+
         }
 
     }
