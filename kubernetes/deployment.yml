@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: GiftCoupon
-          image: username/GiftCoupon:latest
+          image: skcc12.azurecr.io/GiftCoupon:latest
           ports:
             - containerPort: 8080
           readinessProbe:
